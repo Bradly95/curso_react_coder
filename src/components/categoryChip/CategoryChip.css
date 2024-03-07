@@ -1,0 +1,19 @@
+.category_chip{
+    display: flex;
+    background-color: #F6f6f6;
+    border-radius: 8px;
+    gap: 24px;
+    padding: 8px 24px 8px 16px;
+    align-items: center;
+
+    img{
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+    }
+
+    p{
+        font-weight: 600;
+        font-size: medium;
+    }
+}
