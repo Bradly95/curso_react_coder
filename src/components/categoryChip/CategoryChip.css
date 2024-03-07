@@ -5,6 +5,17 @@
     gap: 24px;
     padding: 8px 24px 8px 16px;
     align-items: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    &:hover{
+        border: 1px solid #FF7D35;
+
+        p{
+            color: #FF7D35;
+        }
+    }
 
     img{
         width: 56px;
