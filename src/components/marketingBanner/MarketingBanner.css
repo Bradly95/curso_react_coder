@@ -3,6 +3,7 @@
 
     &>div{
         display: flex;
+        gap: 48px;
         min-height: 40svh;
         align-items: center;
         max-width: 1080px;
@@ -17,6 +18,11 @@
                 text-transform: capitalize;
                 font-size: 5em;
                 line-height: 1em;
+                margin-bottom: 24px;
+            }
+
+            p{
+                font-weight: 600;
             }
         }
 
