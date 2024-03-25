@@ -1,7 +1,7 @@
 import React from 'react'
 import './MarketingBanner.css'
 
-const MarketingBanner = ({ category = {name: 'The Store', description: 'Elevate your music experience to new heights and embrace the joy of every beat', image:'src/assets/hero-img.webp'} }) => {
+const MarketingBanner = ({ category = {name: 'Find Your Sound', description: 'Elevate your music experience to new heights and embrace the joy of every beat', image:'src/assets/hero-img.webp'} }) => {
   return (
     <div className='marketing_banner'>
       <div>

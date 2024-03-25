@@ -130,25 +130,25 @@ export const getProductDetails = (idToSearch) => {
 const categories = [
     {
         name: 'Headset',
-        description: 'The quick brown fox jumps over the lazy dog',
+        description: 'Immerse yourself in sound with our comfortable headset headphones, designed for an immersive listening experience.',
         image: 'src/assets/headset.webp',
         href: '/headset'
     },
     {
         name: 'Gaming',
-        description: 'The quick brown fox jumps over the lazy dog',
+        description: 'Take your gaming to the next level with our gaming headphones, featuring clear sound, quality microphone, and comfort for long gaming sessions.',
         image: 'src/assets/gaming.webp',
         href: '/gaming'
     },
     {
         name: 'In-Ear',
-        description: 'The quick brown fox jumps over the lazy dog',
+        description: 'Enjoy freedom of movement with our compact and lightweight in-ear headphones, perfect for listening to music on the go.',
         image: 'src/assets/in-ear.webp',
         href: '/in-ear'
     },
     {
         name: 'Open-Ear',
-        description: 'The quick brown fox jumps over the lazy dog',
+        description: 'Experience quality sound while staying aware of your surroundings with our open-ear headphones, letting you enjoy music while staying connected to the world around you.',
         image: 'src/assets/open-ear.webp',
         href: '/open-ear'
     }

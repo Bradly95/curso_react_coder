@@ -16,6 +16,7 @@
             h1{
                 text-transform: capitalize;
                 font-size: 5em;
+                line-height: 1em;
             }
         }
 
