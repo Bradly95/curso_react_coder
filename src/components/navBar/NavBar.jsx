@@ -1,13 +1,28 @@
 import React from 'react'
 import { CategoryChip } from '../categoryChip/CategoryChip'
-import headset from '../../assets/headset.webp'
-import gaming from '../../assets/gaming.webp'
-import in_ear from '../../assets/in-ear.webp'
-import open_ear from '../../assets/open-ear.webp'
 import './NavBar.css'
 import { CartWidget } from '../cartWidget/CartWidget'
+import { useState, useEffect } from 'react'
+import { getCategories } from '../../data/asyncMock'
 
-export const NavBar = () => {
+export const NavBar = ({ selectedCategory, selectedProduct }) => {
+
+    const [data, setdata] = useState([])
+
+    useEffect(() => {
+        getCategories()
+            .then(res => setdata(res))
+            .catch(err => console.log(err))
+    }, [])
+
+    if(selectedProduct){ // si hay un producto seleccionado obviamos el render para categorias
+        if(Object.keys(selectedProduct).length > 0){
+            selectedCategory = true;
+        }else{
+            selectedProduct = null;
+        }
+    }
+
     return (
         <div className='nav_bar'>
             <div className='title_bar'>
@@ -22,15 +37,36 @@ export const NavBar = () => {
                     <path d="M21.5972 11.744C20.8932 11.744 20.2639 11.6533 19.7092 11.472C19.1546 11.28 18.6799 11.0027 18.2852 10.64C17.9012 10.2773 17.6079 9.82933 17.4053 9.296C17.2026 8.76267 17.1012 8.14933 17.1012 7.456C17.1012 6.784 17.1972 6.16533 17.3892 5.6C17.5919 5.03467 17.8746 4.54933 18.2372 4.144C18.6106 3.728 19.0639 3.408 19.5972 3.184C20.1412 2.96 20.7492 2.848 21.4212 2.848C22.1039 2.848 22.7013 2.96 23.2133 3.184C23.7359 3.39733 24.1626 3.71733 24.4932 4.144C24.8346 4.57067 25.0853 5.09333 25.2453 5.712C25.4053 6.32 25.4586 7.01867 25.4053 7.808L18.7973 7.856V6.512L23.9333 6.464L23.0212 7.088C23.0959 6.55467 23.0639 6.12267 22.9253 5.792C22.7866 5.45067 22.5839 5.20533 22.3172 5.056C22.0506 4.896 21.7626 4.816 21.4533 4.816C21.0799 4.816 20.7493 4.91733 20.4613 5.12C20.1839 5.32267 19.9653 5.616 19.8053 6C19.6453 6.384 19.5653 6.85333 19.5653 7.408C19.5653 8.28267 19.7519 8.91733 20.1252 9.312C20.5092 9.70667 20.9946 9.904 21.5812 9.904C21.8692 9.904 22.1093 9.86667 22.3013 9.792C22.4933 9.70667 22.6479 9.60533 22.7652 9.488C22.8932 9.36 22.9892 9.22133 23.0532 9.072C23.1279 8.92267 23.1866 8.77867 23.2292 8.64L25.4692 9.12C25.3839 9.51467 25.2453 9.872 25.0533 10.192C24.8719 10.512 24.6213 10.7893 24.3013 11.024C23.9919 11.2587 23.6133 11.4347 23.1653 11.552C22.7279 11.68 22.2052 11.744 21.5972 11.744Z" fill="#FF7D35" />
                     <path d="M74.416 21.72L72.56 20.376L74.272 18.824L74.24 18.68L71.936 18.44L72.592 16.184L74.64 17.384L74.736 17.304L74.256 15H76.64L76.16 17.304L76.272 17.384L78.256 16.184L78.976 18.456L76.688 18.68L76.656 18.824L78.352 20.376L76.48 21.72L75.52 19.592H75.376L74.416 21.72Z" fill="#FF7D35" />
                 </svg>
-                
+
                 <CartWidget />
             </div>
 
             <div className='categories_bar'>
-                <CategoryChip img_src={headset} category_name={'Headset'}/>
-                <CategoryChip img_src={gaming} category_name={'Gaming'}/>
-                <CategoryChip img_src={in_ear} category_name={'In-Ear'}/>
-                <CategoryChip img_src={open_ear} category_name={'Open-Ear'}/>
+                {
+                    selectedCategory ?
+                        <CategoryChip img_src={'../src/assets/headset.webp'} category_name={'Back To All Products'} href={'/'} />
+                        :
+                        data.map((category, index) => {
+                            const global_src = new URL(category.image,window.location.origin)
+                            return <CategoryChip img_src={global_src} category_name={category.name} key={index + 1} href={category.href} />
+                        })
+                }
+
+                {
+                    selectedProduct ?
+                        <>
+                            {data.map((category) => {
+                                if(category.name.toLowerCase() === selectedProduct.category.toLowerCase()){
+                                    const global_src = new URL(category.image,window.location.origin)
+                                    return <CategoryChip img_src={global_src} category_name={`View More ${category.name}`} key={1} href={category.href} />
+                                }
+                            })}
+                        </>
+                        :
+                        false
+                }
+
+
             </div>
 
         </div>

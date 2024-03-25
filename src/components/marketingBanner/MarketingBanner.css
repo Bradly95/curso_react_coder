@@ -1,0 +1,28 @@
+.marketing_banner{
+    background: radial-gradient(50% 86.52% at 50% 94.35%, #4394DF 0%, #CCE5FC 100%);
+
+    &>div{
+        display: flex;
+        min-height: 40svh;
+        align-items: center;
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 48px 0;
+
+        .marketing_text{
+            flex-grow: 1;
+            flex-basis: 40%;
+
+            h1{
+                text-transform: capitalize;
+                font-size: 5em;
+            }
+        }
+
+        img{
+            width: 50%;
+            max-height: 60svh;
+            object-fit: contain;
+        }
+    }
+}

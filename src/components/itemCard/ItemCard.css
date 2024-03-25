@@ -1,0 +1,27 @@
+.item_card{
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-out;
+    color: #444;
+
+    img{
+        width: 200px;
+        margin-bottom: 24px;
+    }
+
+    .price{
+        color: #FF7D35;
+        font-size: 1.4em;
+        font-weight: 900;
+    }
+
+    &:hover{
+        transform: translateY(-4px);
+        border: 2px solid #FF7D35;
+        color: #444;
+    }
+}

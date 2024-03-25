@@ -1,0 +1,7 @@
+.item_list_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
+    max-width: 1080px;
+    margin: -100px auto 128px auto;
+}

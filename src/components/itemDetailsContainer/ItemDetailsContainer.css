@@ -1,0 +1,28 @@
+.item_details_container{
+    display: flex;
+    max-width: 1080px;
+    margin: 48px auto;
+    align-items: center;
+    gap: 48px;
+
+    img{
+        max-width: 50%;
+        object-fit: contain;
+    }
+
+    .category{
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .stock{
+        font-weight: 600;
+        margin-bottom: 24px;
+    }
+
+    .description{
+        text-wrap: pretty;
+        margin-bottom: 24px;
+    }
+}

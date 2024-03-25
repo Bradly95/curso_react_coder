@@ -1,5 +1,8 @@
 .nav_bar{
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 99;
 
     .title_bar{
         width: 100%;
@@ -7,14 +10,13 @@
         align-items: center;
         justify-content: space-between;
         background-color: #f6f6f6;
-        padding: 24px 48px;
-        margin-bottom: 24px;
+        padding: 12px 48px;
     }
 
     .categories_bar{
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 24px;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #CCE5FC;
     }
 }

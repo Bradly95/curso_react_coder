@@ -1,16 +1,17 @@
 .category_chip{
     display: flex;
-    background-color: #F6f6f6;
-    border-radius: 8px;
+    background-color: transparent;
+    color: black;
     gap: 24px;
-    padding: 8px 24px 8px 16px;
+    padding: 8px 32px 8px 24px;
     align-items: center;
-    border: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     cursor: pointer;
     transition: all 0.3s ease-out;
 
     &:hover{
-        border: 1px solid #FF7D35;
+        border-bottom: 2px solid #FF7D35;
+        background-color:#F6f6f6;
 
         p{
             color: #FF7D35;
@@ -18,8 +19,8 @@
     }
 
     img{
-        width: 56px;
-        height: 56px;
+        width: 32px;
+        height: 32px;
         object-fit: contain;
     }
 

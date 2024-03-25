@@ -1,0 +1,50 @@
+.counter_container{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    max-width: 300px;
+    gap: 4px;
+
+    .price{
+        grid-column: 1/4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f6f6f6;
+        color: #FF7D35;
+        border-radius: 4px;
+        font-size: 1.4em;
+        font-weight: 900;
+        padding: 8px 0;
+    }
+
+    button{
+        background-color: #f6f6f6;
+        border-radius: 4px;
+        border: 2px solid transparent;
+        transition: all 0.2s ease-out;
+        outline: none;
+
+        &:hover{
+            border: 2px solid #FF7D35;
+            color: #FF7D35;
+        }
+
+        &:focus{
+            outline: none;
+            border: 2px solid #FF7D35;
+            color: #FF7D35;
+        }
+    }
+
+    .quantity{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f6f6f6;
+        border-radius: 4px;
+    }
+
+    .add_to_cart{
+        grid-column: 1/4;
+    }
+}
