@@ -1,0 +1,51 @@
+.loader_body_container{
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 100svh;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.animation-container{
+
+    display: flex;
+    gap: 8px;
+
+    div{
+        width: 12px;
+        height: 12px;
+        background-color: #4a4a4a;
+        border-radius: 50%;
+    }
+
+    .c1{
+        animation: c1 1s linear infinite;
+    }
+    .c2{
+        animation: c1 1s linear infinite 0.2s;
+    }
+    .c3{
+        animation: c1 1s linear infinite 0.4s;
+    }
+}
+
+@keyframes c1 {
+    0%{
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50%{
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}

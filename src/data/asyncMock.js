@@ -102,13 +102,13 @@ export const getProductsData = (category = null) => {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(response)
-            }, 500)
+            }, 300)
         })
     } else {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(products)
-            }, 500)
+            }, 300)
         })
     }
 }
@@ -119,7 +119,7 @@ export const getProductDetails = (idToSearch) => {
         if (product) {
             setTimeout(() => {
                 resolve(product);
-            }, 500);
+            }, 300);
         } else {
             reject("Product not found");
         }
@@ -158,6 +158,6 @@ export const getCategories = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(categories)
-        }, 500)
+        }, 300)
     })
 }

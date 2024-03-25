@@ -42,6 +42,7 @@ export const NavBar = ({ selectedCategory, selectedProduct }) => {
             </div>
 
             <div className='categories_bar'>
+
                 {
                     selectedCategory ?
                         <CategoryChip img_src={'../src/assets/headset.webp'} category_name={'Back To All Products'} href={'/'} />
